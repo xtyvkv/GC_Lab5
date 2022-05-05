@@ -7,36 +7,48 @@ namespace GC_Lab5
     {
         static void Main(string[] args)
         {
+            // Create array
             int[] nums = { 10, 2330, 112233, 12, 949, 3764, 2942, 523863 };
+            
+            // Print array
+            Console.WriteLine("[{0}]", String.Join(", ", nums));
+            Console.WriteLine();
 
             // Find min value
             int minResult = nums.Min();
-            Console.WriteLine("Minimum Value: {0}", minResult);
+            Console.WriteLine("Minimum value:\n> {0}", minResult);
+            Console.WriteLine();
 
             // Find max value
             int maxResult = nums.Max();
-            Console.WriteLine("Maximum Value: {0}", maxResult);
+            Console.WriteLine("Maximum value:\n> {0}", maxResult);
+            Console.WriteLine();
 
             // Find max below 10000
             var maxWithinRange = nums.Where(x => x < 10000).ToArray();
             var maxLessThan = maxWithinRange.Max();
-            Console.WriteLine($"Maximum Value below 10000: {maxLessThan}");
-
-            // BELOW IS NOT COMPLETE
+            Console.WriteLine($"Maximum value below 10000:\n> {maxLessThan}");
+            Console.WriteLine();
 
             // Find values between 10 and 100
-            var betweensies = nums.Where((x) => (x > 10) && (x < 100)).ToArray();
-            var sortedBetweensies = betweensies.OrderBy((x) => x);
-            var descendingSortedBetweensies = betweensies.OrderByDescending((x) => x).ToList();
+            var numRange1 = nums.Where((x) => (x > 10) && (x < 100)).ToArray();
+            var sortedNumRange1 = numRange1.OrderBy((x) => x);
+            var descendingSortedNumRange1 = numRange1.OrderByDescending((x) => x).ToList();
             Console.WriteLine("Values between 10 and 100:");
-            descendingSortedBetweensies.ForEach(x => Console.WriteLine(x));
+            descendingSortedNumRange1.ForEach(x => Console.WriteLine($"> {x}"));
+            Console.WriteLine();
 
             // Find values between 100000 and 999999
-            var coolBetween = nums.Where((x) => (x > 100000) && (x < 999999)).ToArray();
-            var sortedCoolBetween = coolBetween.OrderBy((x) => x);
-            var descendingSortedCoolBetween = coolBetween.OrderByDescending((x) => x).ToList();
+            var numRange2 = nums.Where((x) => (x > 100000) && (x < 999999)).ToArray();
+            var sortedNumRange2 = numRange2.OrderBy((x) => x);
+            var descendingSortedNumRange2 = numRange2.OrderByDescending((x) => x).ToList();
             Console.WriteLine("Values between 100000 and 999999:");
-            descendingSortedCoolBetween.ForEach(x => Console.WriteLine(x));
+            descendingSortedNumRange2.ForEach(x => Console.WriteLine($"> {x}"));
+            Console.WriteLine();
+
+            // Count even numbers in array
+            var evenNums = nums.Count(x => x % 2 == 0);
+            Console.WriteLine("Count of even values:\n> {0}", evenNums);
             
         }
     }
