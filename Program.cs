@@ -38,11 +38,11 @@ namespace GC_Lab5
             descendingSortedNumRange1.ForEach(x => Console.WriteLine($"> {x}"));
             Console.WriteLine();
 
-            // Find values between 100000 and 999999
-            var numRange2 = nums.Where((x) => (x > 100000) && (x < 999999)).ToArray();
+            // Find values between 100000 and 999999 inclusive
+            var numRange2 = nums.Where((x) => (x >= 100000) && (x <= 999999)).ToArray();
             var sortedNumRange2 = numRange2.OrderBy((x) => x);
             var descendingSortedNumRange2 = numRange2.OrderByDescending((x) => x).ToList();
-            Console.WriteLine("Values between 100000 and 999999:");
+            Console.WriteLine("Values between 100000 and 999999 (inclusive):");
             descendingSortedNumRange2.ForEach(x => Console.WriteLine($"> {x}"));
             Console.WriteLine();
 
