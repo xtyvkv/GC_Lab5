@@ -22,6 +22,8 @@ namespace GC_Lab5
             var maxLessThan = maxWithinRange.Max();
             Console.WriteLine($"Maximum Value below 10000: {maxLessThan}");
 
+            // BELOW IS NOT COMPLETE
+
             // Find values between 10 and 100
             var betweensies = nums.Where((x) => (x > 10) && (x < 100)).ToArray();
             var sortedBetweensies = betweensies.OrderBy((x) => x);
